@@ -1,0 +1,219 @@
+C51 COMPILER V9.52.0.0   ESP8266                                                           05/26/2016 21:33:57 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE ESP8266
+OBJECT MODULE PLACED IN .\ESP8266.obj
+COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE ..\ESP8266\ESP8266.c BROWSE INCDIR(..\UART;..\DHT11;..\ESP8266;..\MAIN) DEB
+                    -UG OBJECTEXTEND PRINT(.\ESP8266.lst) TABS(2) OBJECT(.\ESP8266.obj)
+
+line level    source
+
+   1          /*****************************************************
+   2          ** 功能模块：  ESP8266-01串口wifi模块，AT指令集021
+   3          ** 硬件相关：  MCU使用STC89C52RC,硬件连接对应如下：         
+   4          **             ESP8266_URXD--->P31
+   5          **             ESP8266_UTXD--->P30
+   6          ******************************************************/
+   7          
+   8          #include <REG52.h>
+   9          #include "esp8266.h"
+  10          #include "UART.h"
+  11          #include <string.h>
+  12          
+  13          /*ESP8266使用到的IO引脚定义*/
+  14          sbit ESP8266_CHPD = P2^0;           //高电平工作，低电平关闭模块供电
+  15          sbit ESP8266_RESET = P2^1;          //外部复位信号，低电平复位，高电平工作
+  16          sbit ESP8266_GPIO2 = P2^2;          //开机上电时必须为高电平，禁止硬件下拉
+  17          sbit ESP8266_GPIO0 = P2^3;          //悬空：FLASH BOOT,工作模式；下拉：UART DOWNLOAD,下载模式
+  18          
+  19          
+  20          /*****************************************************
+  21          ** 函数名称：Delay1000ms
+  22          ** 函数功能：延时1S
+  23          ** 参    数：无
+  24          ** 函数返回：无
+  25          ******************************************************/
+  26          void Delay1000ms()    //@11.0592MHz
+  27          {
+  28   1          unsigned char i, j, k;
+  29   1      
+  30   1          //  _nop_();
+  31   1          i = 8;
+  32   1          j = 1;
+  33   1          k = 243;
+  34   1          do
+  35   1          {
+  36   2              do
+  37   2              {
+  38   3                  while(--k);
+  39   3              }while(--j);
+  40   2          }while(--i);
+  41   1      }
+  42          
+  43          /*****************************************************
+  44          ** 函数名称：Delay50ms
+  45          ** 函数功能：延时50MS
+  46          ** 参    数：无
+  47          ** 函数返回：无
+  48          ******************************************************/
+  49          void Delay50ms()    //@11.0592MHz
+  50          {
+  51   1          unsigned char i, j;
+  52   1      
+  53   1          i = 90;
+  54   1          j = 163;
+C51 COMPILER V9.52.0.0   ESP8266                                                           05/26/2016 21:33:57 PAGE 2   
+
+  55   1          do
+  56   1          {
+  57   2              while(--j);
+  58   2          }while(--i);
+  59   1      }
+  60          
+  61          /*****************************************************
+  62          ** 函数名称：ESP8266CmdSend
+  63          ** 函数功能：向ESP8266发送AT命令，并判断返回
+  64          ** 参    数：1.cmd：需发送的AT命令
+  65          **           2.parameter：AT命令后续参数，当值为NULL时，AT命令无参数
+  66          **           3.cmdchack：需判断的AT命令返回，当值为NULL时，无需判断AT命令返回
+  67          ** 函数返回：无
+  68          ******************************************************/
+  69          void ESP8266CmdSend(char *cmd,char *parameter,char *cmdchack)
+  70          {
+  71   1          //char *atcheack;
+  72   1          uint i = 1024;
+  73   1          //UartClaer();            //清空串口相关缓存和标志位
+  74   1          UartSendString(cmd);        //发送AT命令
+  75   1      
+  76   1          if(parameter != NULL)       //判断是否有参数发送
+  77   1          {
+  78   2              UartSendString(parameter);    //发送AT命令参数
+  79   2          }
+  80   1          UartSendData(0x0D);       //发送回车换行
+  81   1          UartSendData(0x0A);
+  82   1          
+  83   1          if(cmdchack == NULL) return;      //若无需判断AT命令返回，退出函数
+  84   1          while(!RI && i--);
+  85   1          RI = 0;
+  86   1          /*while(1)                //等待AT命令返回
+  87   1          {
+  88   1              if(UartRcvByte >= 6)
+  89   1              {
+  90   1                  break;
+  91   1              }
+  92   1          //此处可增加接收返回超时判断
+  93   1          }*/
+  94   1          //Delay1000ms();
+  95   1          //Delay1000ms();
+  96   1          //UartSendString("123456");
+  97   1          //atcheack = strstr(UartRcvBuf, cmdchack);      //检测AT命令返回
+  98   1          
+  99   1          /*if(atcheack==NULL)
+ 100   1          {                                            
+ 101   1          DisplayChar_12X06(6,96,"Error");      //OLED显示当前命令执行状态，如果没有OLED可以屏蔽
+ 102   1          }
+ 103   1          else
+ 104   1          {
+ 105   1          DisplayChar_12X06(6,96,"Ok");       //OLED显示当前命令执行状态，如果没有OLED可以屏蔽
+ 106   1          } 
+ 107   1          */
+ 108   1      }
+ 109          
+ 110          /*****************************************************
+ 111          ** 函数名称：QuitPassThroughMode
+ 112          ** 函数功能：退出透传模式
+ 113          ** 参    数：无
+ 114          ** 函数返回：无
+ 115          ******************************************************/
+ 116          void QuitPassThroughMode(void)
+C51 COMPILER V9.52.0.0   ESP8266                                                           05/26/2016 21:33:57 PAGE 3   
+
+ 117          {
+ 118   1          UartSendString(QUIT_PASS_THROUGH);      //发送退出透传模式编码
+ 119   1      
+ 120   1          /*以下操作为避免模块不是在透传模式下，发送了退出透传模式编码后，影响下
+             -一条指令正常工作*/
+ 121   1          Delay50ms();              
+ 122   1          UartSendData(0x0D);       //发送回车换行
+ 123   1          UartSendData(0x0A);
+ 124   1      }
+ 125          
+ 126          /*****************************************************
+ 127          ** 函数名称：ESP8266Init
+ 128          ** 函数功能：初始化ESP8266各引脚，使其进入工作状态，设置工作模式参数
+ 129          ** 参    数：无
+ 130          ** 函数返回：无
+ 131          ******************************************************/
+ 132          void ESP8266Init(void)
+ 133          {
+ 134   1          //uchar idata staipbuf[22],i=0;
+ 135   1          //char *p;
+ 136   1      
+ 137   1          //Delay1000ms();
+ 138   1          //memset(staipbuf,0,22);
+ 139   1          /*IO引脚配置，确保ESP8266进入工作状态*/
+ 140   1          //ESP8266_CHPD=1;
+ 141   1          //ESP8266_RESET=1;
+ 142   1          //ESP8266_GPIO2=1;
+ 143   1          //ESP8266_GPIO0=1;
+ 144   1      
+ 145   1          /*以下工作模式参数配置*/
+ 146   1          ESP8266CmdSend(ATE0,NULL,"OK");     //关闭回显
+ 147   1          //QuitPassThroughMode();            //退出透传模式
+ 148   1          ESP8266CmdSend(AT_CWAUTOCONN,"=0","OK");  //关闭模块STA自动连接
+ 149   1          //ESP8266CmdSend(AT,NULL,"OK");       //测试AT命令
+ 150   1          ESP8266CmdSend(AT_CWMODE,"=3","OK");    //设置ESP8266工作模式：STA+AP
+ 151   1          ESP8266CmdSend(AT_CWJAP,ROUTE_USER_PASSWORD,"OK");    //连接无线路由器
+ 152   1      
+ 153   1          //ESP8266CmdSend(AT_CIFSR,0,"OK");      //获取ESP8266 IP地址
+ 154   1          /*以下if-else部分为更新OLED显示STAIP,没有OLED可以屏蔽
+ 155   1          p=strstr(UartRcvBuf,"STAIP,");
+ 156   1          if(p)                   //更新OLED显示STAIP
+ 157   1          {
+ 158   1          while(1)
+ 159   1          {
+ 160   1            staipbuf[i]=*(p+7+i); 
+ 161   1            i++;
+ 162   1            if(*(p+7+i)=='"') break;
+ 163   1          }
+ 164   1          //DisplayChar_12X06(4,36,staipbuf); 
+ 165   1          }
+ 166   1          else
+ 167   1          {
+ 168   1          //DisplayChar_12X06(4,60,"NONE");
+ 169   1          }
+ 170   1          */
+ 171   1          //ESP8266CmdSend(AT_CIPSERVER,"=0",NULL);   //关闭ESP8266服务器模式
+ 172   1          //ESP8266CmdSend(AT_CIPMUX,"=0","OK");    //设置ESP8266位单连接模式
+ 173   1          //ESP8266CmdSend(AT_CIPSTART,SERVER_IP_PORT,"OK");    //ESP8266连接上位机服务器，请自行修改�
+             -��务器IP和端口号
+ 174   1          //ESP8266CmdSend(AT_CIPMODE,"=1","OK");   //开启透传模式
+ 175   1          //ESP8266CmdSend(AT_CIPSEND,NULL,NULL);   //开始发送数据
+ 176   1      }
+C51 COMPILER V9.52.0.0   ESP8266                                                           05/26/2016 21:33:57 PAGE 4   
+
+ 177          
+ 178          /*****************************************************
+ 179          ** 函数名称：ESP8266ConnectServer
+ 180          ** 函数功能：ESP8266连接远端服务器
+ 181          ** 参    数：无
+ 182          ** 函数返回：无
+ 183          ******************************************************/
+ 184          //void ESP8266ConnectServer(uchar *ip,uchar *port)
+ 185          //{
+ 186          //
+ 187          //}
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    213    ----
+   CONSTANT SIZE    =     74    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      11
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

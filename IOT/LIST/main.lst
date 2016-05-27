@@ -1,0 +1,103 @@
+C51 COMPILER V9.52.0.0   MAIN                                                              05/26/2016 21:33:57 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\main.obj
+COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE ..\MAIN\main.c BROWSE INCDIR(..\UART;..\DHT11;..\ESP8266;..\MAIN) DEBUG OBJ
+                    -ECTEXTEND PRINT(.\main.lst) TABS(2) OBJECT(.\main.obj)
+
+line level    source
+
+   1          #include <REG52.H>  
+   2          #include "UART.h"
+   3          #include "DHT11.h"
+   4          #include "ESP8266.h"
+   5          
+   6          #define uchar unsigned char
+   7          #define uint unsigned int
+   8          
+   9          extern uchar T_data_H, RH_data_H, UartRcvEnd;
+  10          
+  11          void delay_1s(unsigned int delay) 
+  12          // 延时子程序 对应12M晶振
+  13          { 
+  14   1          unsigned int ms, i;
+  15   1          
+  16   1          while(delay--) {
+  17   2              ms = 1000;
+  18   2              while(ms--) //每一次循环1ms
+  19   2              {
+  20   3                  for(i = 0; i < 120; i++);
+  21   3              }
+  22   2          }
+  23   1      }
+  24          
+  25          void SendData()
+  26          {
+  27   1          ESP8266CmdSend(AT_CIPSTART,SERVER_IP_PORT,"OK");
+  28   1          delay_1s(1);
+  29   1        
+  30   1          ESP8266CmdSend(AT_CIPSEND,"=45","OK");
+  31   1          Delay_1ms(100);
+  32   1        
+  33   1          UartSendString("DHT11");
+  34   1          UartSendData('|');
+  35   1          UartSendString("temperature");
+  36   1          UartSendData('~');
+  37   1          UartSendData(T_data_H);
+  38   1          UartSendData('~');
+  39   1          UartSendString("℃");
+  40   1          UartSendData('~');
+  41   1          UartSendString("DEC");
+  42   1          UartSendData('|');
+  43   1          UartSendString("humidity");
+  44   1          UartSendData('~');
+  45   1          UartSendData(RH_data_H);
+  46   1          UartSendData('~');
+  47   1          UartSendString("RH");
+  48   1          UartSendData('~');
+  49   1          UartSendString("DEC");
+  50   1          Delay_1ms(300);
+  51   1        
+  52   1          ESP8266CmdSend(AT_CIPCLOSE,NULL,"OK");
+  53   1      }
+  54          //----------------------------------------------  
+C51 COMPILER V9.52.0.0   MAIN                                                              05/26/2016 21:33:57 PAGE 2   
+
+  55          void main (void)  
+  56          {  
+  57   1          UartInit();
+  58   1          //EA = 0;
+  59   1          delay_1s(3);
+  60   1          ESP8266Init();
+  61   1          while(!UartRcvEnd);
+  62   1          EA = 0;
+  63   1          while(1){
+  64   2            
+  65   2              delay_1s(2);
+  66   2              //UartSendData('l');
+  67   2              DHT11_ReadTempAndHumi();
+  68   2              //EA = 0;
+  69   2              SendData();
+  70   2              //ESP8266CmdSend(AT_CWMODE,"=3","OK");
+  71   2              //UartSendData('k');
+  72   2              //UartSendString("AT");
+  73   2              //UartSendData(0x0D);       //发送回车换行
+  74   2              //UartSendData(0x0A);
+  75   2          }
+  76   1      }  
+  77          //----------------------------------------------  
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    295    ----
+   CONSTANT SIZE    =    108    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

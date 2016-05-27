@@ -1,0 +1,7 @@
+"STARTUP.obj",
+".\main.obj",
+".\ESP8266.obj",
+".\DHT11.obj",
+".\UART.obj" 
+TO "IOT" 
+RAMSIZE(256) 
