@@ -58,8 +58,7 @@ public class Process implements Runnable {
 					break;
 				if(sd.length == 4)
 					sd[3] = this.parse(sd[1], sd[3]);
-				else if 
-					break;
+
 				Data data = new Data(sd[0], new Date(), sd[1], strs[0], sd[2]);
 				session.save(data);	
 			}
@@ -80,13 +79,16 @@ public class Process implements Runnable {
 	}
 
 	private String parse(String value, String format) {
-		byte bs[] = value.getBytes();
-		int count = 0;
-		for(int b : bs) {
-			if(b < 0)
-				b = 256 + b;
-			count = count * (int) Math.pow(2, 8) + b;
+		if(format.equals("DEC")) {
+			byte bs[] = value.getBytes();
+			int count = 0;
+			for(int b : bs) {
+				if(b < 0)
+					b = 256 + b;
+				count = count * (int) Math.pow(2, 8) + b;
+			}
+			return count + "";
 		}
-		return count + "";
+		return value;
 	}
 }

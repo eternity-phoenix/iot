@@ -1,12 +1,10 @@
 package DataTest;
 
-import static org.junit.Assert.*;
 
 import java.math.BigInteger;
 import java.util.Arrays;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+
 import org.junit.Test;
 
 public class TmpTest {
