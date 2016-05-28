@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/iot</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">password</property>
+        <property name="connection.autocommit">true</property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <!--<property name="connection.pool_size">1</property>-->
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <!-- 	jta:java transaction API:分布式数据库事物管理,通常需要第三方transaction manager提供驱动和支持(例:spring)
+        		thread:当前线程
+        		managed:手工管理
+        		custom.Class:自定义class来管理session -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Disable the second-level cache二级缓存  
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+        -->
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        
+        <!-- format executed sql to a better read text format -->
+        <property name="format_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">update</property>
+        <!--hbm2ddl:hibernate mapping to data definition language
+        	要不要让hibernate自动生成建表语句
+        	create:如果数据库中没有该表,自动生成(有也重新生成);
+        	update:如果对象有新加的属性;表中没有,则更新这个表;也能create表
+        	create-drop:每次已关闭sessionfactory;drop该表
+        	validate:验证;每次执行操作前,验证对象的属性是否和表相匹配-->
+
+		<mapping class="models.Data" />
+		<!-- 注意,class用.; resource用/ -->
+
+    </session-factory>
+
+</hibernate-configuration>

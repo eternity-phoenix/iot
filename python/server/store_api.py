@@ -47,8 +47,6 @@ def store_target(sock, addr):
             attribute, value, unit = res[0], res[1], res[2]
             if len(res) == 4:
                 value = parse(value, res[3])
-            else:
-                break
 
             data = Data(attribute=attribute, unit=unit, value=value, created_at=datetime.now(), sensor_id=li[0])
             session.add(data)
