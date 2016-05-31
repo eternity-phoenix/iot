@@ -81,7 +81,7 @@ public class Process implements Runnable {
 	private String parse(String value, String format) {
 		if(format.equals("DEC")) {
 			byte bs[] = value.getBytes();
-			int count = 0;
+			long count = 0;
 			for(int b : bs) {
 				if(b < 0)
 					b = 256 + b;
