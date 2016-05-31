@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        05/26/2016  21:33:58  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        05/31/2016  10:01:55  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
@@ -56,10 +56,10 @@ LINK MAP OF MODULE:  IOT (?C_STARTUP)
             CODE    045BH     0029H     UNIT         ?PR?_UARTSENDBUF?UART
             CODE    0484H     0022H     UNIT         ?PR?MAIN?MAIN
             CODE    04A6H     001BH     UNIT         ?PR?UARTCLAER?UART
-            CODE    04C1H     0017H     UNIT         ?PR?_DELAY_1MS?DHT11
+            CODE    04C1H     0017H     UNIT         ?PR?_DELAY_100US?DHT11
             CODE    04D8H     0016H     UNIT         ?PR?QUITPASSTHROUGHMODE?ESP8266
             CODE    04EEH     0016H     UNIT         ?PR?_UARTSENDSTRING?UART
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/26/2016  21:33:58  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/31/2016  10:01:55  PAGE 2
 
 
             CODE    0504H     0011H     UNIT         ?C_INITSEG
@@ -96,7 +96,7 @@ SEGMENT                                   DATA_GROUP
   +--> ?PR?_UARTSENDDATA?UART
 
 ?PR?DHT11_READTEMPANDHUMI?DHT11         -----    -----
-  +--> ?PR?_DELAY_1MS?DHT11
+  +--> ?PR?_DELAY_100US?DHT11
   +--> ?PR?DELAY_10US?DHT11
   +--> ?PR?DHT11_READVALUE?DHT11
 
@@ -109,7 +109,7 @@ SEGMENT                                   DATA_GROUP
   +--> ?CO?MAIN
   +--> ?PR?_ESP8266CMDSEND?ESP8266
   +--> ?PR?_DELAY_1S?MAIN
-  +--> ?PR?_DELAY_1MS?DHT11
+  +--> ?PR?_DELAY_100US?DHT11
   +--> ?PR?_UARTSENDSTRING?UART
   +--> ?PR?_UARTSENDDATA?UART
 
@@ -119,7 +119,7 @@ SYMBOL TABLE OF MODULE:  IOT (?C_STARTUP)
 
   VALUE           TYPE          NAME
   ----------------------------------
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/26/2016  21:33:58  PAGE 3
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/31/2016  10:01:55  PAGE 3
 
 
 
@@ -179,7 +179,7 @@ SYMBOL TABLE OF MODULE:  IOT (?C_STARTUP)
   -------         ENDDO         
   C:042DH         LINE#         11
   C:042DH         LINE#         13
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/26/2016  21:33:58  PAGE 4
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/31/2016  10:01:55  PAGE 4
 
 
   C:042DH         LINE#         16
@@ -239,7 +239,7 @@ SYMBOL TABLE OF MODULE:  IOT (?C_STARTUP)
   D:0090H         PUBLIC        P1
   D:00A0H         PUBLIC        P2
   D:00B0H         PUBLIC        P3
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/26/2016  21:33:58  PAGE 5
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/31/2016  10:01:55  PAGE 5
 
 
   D:00A8H         PUBLIC        IE
@@ -299,7 +299,7 @@ SYMBOL TABLE OF MODULE:  IOT (?C_STARTUP)
   C:03BAH         LINE#         74
   C:03BDH         LINE#         76
   C:03CBH         LINE#         77
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/26/2016  21:33:58  PAGE 6
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/31/2016  10:01:55  PAGE 6
 
 
   C:03CBH         LINE#         78
@@ -349,17 +349,17 @@ SYMBOL TABLE OF MODULE:  IOT (?C_STARTUP)
   D:0016H         PUBLIC        RH_data_H
   B:0080H.0       PUBLIC        DHT11_DATA
   D:0017H         PUBLIC        RH_data_L
+  C:04C1H         PUBLIC        _Delay_100us
   D:0018H         PUBLIC        RH_data_H_temp
   D:0019H         PUBLIC        RH_data_L_temp
-  C:04C1H         PUBLIC        _Delay_1ms
   C:0189H         PUBLIC        DHT11_ReadTempAndHumi
   D:00C8H         PUBLIC        T2CON
   D:001AH         PUBLIC        T_data_H
   D:00D0H         PUBLIC        PSW
   D:001BH         PUBLIC        T_data_L
-  -------         PROC          _DELAY_1MS
+  -------         PROC          _DELAY_100US
   D:0006H         SYMBOL        j
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/26/2016  21:33:58  PAGE 7
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/31/2016  10:01:55  PAGE 7
 
 
   -------         DO            
@@ -371,7 +371,7 @@ SYMBOL TABLE OF MODULE:  IOT (?C_STARTUP)
   C:04CAH         LINE#         19
   C:04D0H         LINE#         20
   C:04D7H         LINE#         21
-  -------         ENDPROC       _DELAY_1MS
+  -------         ENDPROC       _DELAY_100US
   -------         PROC          DELAY_10US
   -------         DO            
   D:001CH         SYMBOL        i
@@ -419,7 +419,7 @@ SYMBOL TABLE OF MODULE:  IOT (?C_STARTUP)
   C:0189H         LINE#         72
   C:0189H         LINE#         73
   C:0189H         LINE#         77
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/26/2016  21:33:58  PAGE 8
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/31/2016  10:01:55  PAGE 8
 
 
   C:018BH         LINE#         78
@@ -479,7 +479,7 @@ SYMBOL TABLE OF MODULE:  IOT (?C_STARTUP)
   D:0098H         PUBLIC        SCON
   D:0089H         PUBLIC        TMOD
   D:0088H         PUBLIC        TCON
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/26/2016  21:33:58  PAGE 9
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/31/2016  10:01:55  PAGE 9
 
 
   C:0003H         PUBLIC        UartInit
@@ -539,7 +539,7 @@ SYMBOL TABLE OF MODULE:  IOT (?C_STARTUP)
   C:04BCH         LINE#         83
   C:04BEH         LINE#         84
   C:04C0H         LINE#         85
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/26/2016  21:33:58  PAGE 10
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/31/2016  10:01:55  PAGE 10
 
 
   -------         ENDPROC       UARTCLAER
@@ -599,7 +599,7 @@ SYMBOL TABLE OF MODULE:  IOT (?C_STARTUP)
     SEGMENT: ?PR?QUITPASSTHROUGHMODE?ESP8266
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/26/2016  21:33:58  PAGE 11
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/31/2016  10:01:55  PAGE 11
 
 
     SEGMENT: ?PR?UARTCLAER?UART
