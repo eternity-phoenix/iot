@@ -28,7 +28,7 @@ void SendData()
 		delay_1s(1);
 	
 	  ESP8266CmdSend(AT_CIPSEND,"=45","OK");
-	  Delay_1ms(100);
+	  Delay_100us(100);
 	
 	  UartSendString("DHT11");
 		UartSendData('|');
@@ -47,7 +47,7 @@ void SendData()
 		UartSendString("RH");
 		UartSendData('~');
 		UartSendString("DEC");
-	  Delay_1ms(300);
+	  Delay_100us(300);
 	
 	  ESP8266CmdSend(AT_CIPCLOSE,NULL,"OK");
 }
