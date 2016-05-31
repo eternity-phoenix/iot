@@ -12,7 +12,7 @@ uchar T_data_H, T_data_L, RH_data_H, RH_data_L, checkdata;
 uchar T_data_H_temp, T_data_L_temp, RH_data_H_temp, RH_data_L_temp, checkdata_temp;
 uchar DATA_TEMP; 
 
-void Delay_1ms(uint j)
+void Delay_100us(uint j)
 {   
 	uchar i;
 	for(; j > 0; j--){  
@@ -75,7 +75,7 @@ void DHT11_ReadTempAndHumi(void)
 	
 	//主机拉低18ms 
 	DHT11_DATA = 0;
-	Delay_1ms(180);
+	Delay_100us(180);
 	DHT11_DATA = 1;
 	
 	//总线由上拉电阻拉高 主机延时20us

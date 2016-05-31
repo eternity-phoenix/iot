@@ -13,7 +13,7 @@
 
 void Delay_10us(void);
 void DHT11_ReadValue(void);
-extern void Delay_1ms(uint j);
+extern void Delay_100us(uint j);
 extern void DHT11_ReadTempAndHumi(void);
 
 #endif
