@@ -31,5 +31,10 @@ public class TmpTest {
 		byte bb = (byte) 0b1111_1111;
 		System.out.println(bb);
 	}
+	
+	@Test
+	public void test1() {
+		System.out.println(1L * 1);
+	}
 
 }
