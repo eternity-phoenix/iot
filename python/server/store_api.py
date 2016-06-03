@@ -58,6 +58,7 @@ def store_target(sock, addr):
         print(e)
     finally:
         sock.close()
+        file.close()
         print('Connect from %s: %s closed.' % addr)
 
 
