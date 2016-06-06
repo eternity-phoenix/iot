@@ -145,7 +145,7 @@ void ESP8266Init(void)
 		/*以下工作模式参数配置*/
 		ESP8266CmdSend(ATE0,NULL,"OK");			//关闭回显
 		//QuitPassThroughMode();						//退出透传模式
-		ESP8266CmdSend(AT_CWAUTOCONN,"=0","OK");	//关闭模块STA自动连接
+		ESP8266CmdSend(AT_CWAUTOCONN,"=1","OK");	//关闭模块STA自动连接
 		//ESP8266CmdSend(AT,NULL,"OK");				//测试AT命令
 		ESP8266CmdSend(AT_CWMODE,"=3","OK");		//设置ESP8266工作模式：STA+AP
 		ESP8266CmdSend(AT_CWJAP,ROUTE_USER_PASSWORD,"OK");		//连接无线路由器

@@ -40,7 +40,7 @@
 /*AT增补指令集*/
 #define ATE0				"ATE0"								//关闭AT命令回显
 #define ATE1				"ATE1"								//开启AT命令回显
-#define AT_CIOBAUD			"AT+CIOBAUD"						//波特率设置命令，波特率范围：9600-921600
+#define AT_CIOBAUD			"AT+UART"						//波特率设置命令，波特率范围：9600-921600 AT+UART=9600,8,1,0,0
 #define AT_CSYSWDTENABLE	"AT+CSYSWDTENABLE"	 				//打开看门狗
 #define AT_CSYSWDTDISABLE	"AT+CSYSWDTDISABLE"					//关闭看门狗
 #define QUIT_PASS_THROUGH	"+++"								//退出透传

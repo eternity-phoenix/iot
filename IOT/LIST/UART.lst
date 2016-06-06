@@ -1,4 +1,4 @@
-C51 COMPILER V9.52.0.0   UART                                                              05/31/2016 10:05:56 PAGE 1   
+C51 COMPILER V9.52.0.0   UART                                                              06/02/2016 17:59:18 PAGE 1   
 
 
 C51 COMPILER V9.52.0.0, COMPILATION OF MODULE UART
@@ -62,7 +62,7 @@ line level    source
   50   2      
   51   2              if(UartRcvBufP == UART_RCV_BUF_LEN - 1)   //保持最后接收缓存最后1个字节为0
   52   2              {
-C51 COMPILER V9.52.0.0   UART                                                              05/31/2016 10:05:56 PAGE 2   
+C51 COMPILER V9.52.0.0   UART                                                              06/02/2016 17:59:18 PAGE 2   
 
   53   3                  return;
   54   3              }
@@ -126,7 +126,7 @@ line level    source
  112   2              while(!TI);
  113   2              TI = 0;
  114   2              string++;
-C51 COMPILER V9.52.0.0   UART                                                              05/31/2016 10:05:56 PAGE 3   
+C51 COMPILER V9.52.0.0   UART                                                              06/02/2016 17:59:18 PAGE 3   
 
  115   2          }
  116   1      }
