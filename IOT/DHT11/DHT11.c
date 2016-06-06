@@ -11,6 +11,7 @@ uchar FLAG;
 uchar T_data_H, T_data_L, RH_data_H, RH_data_L, checkdata;
 uchar T_data_H_temp, T_data_L_temp, RH_data_H_temp, RH_data_L_temp, checkdata_temp;
 uchar DATA_TEMP; 
+extern uchar UartRcvEnd;
 
 void Delay_100us(uint j)
 {   
@@ -117,6 +118,7 @@ void DHT11_ReadTempAndHumi(void)
 			T_data_H = T_data_H_temp;
 			T_data_L = T_data_L_temp;
 			checkdata = checkdata_temp;
+			UartRcvEnd = 1;
 		}
 	}
 }

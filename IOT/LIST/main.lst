@@ -1,4 +1,4 @@
-C51 COMPILER V9.52.0.0   MAIN                                                              06/02/2016 17:59:18 PAGE 1   
+C51 COMPILER V9.52.0.0   MAIN                                                              06/06/2016 20:04:55 PAGE 1   
 
 
 C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
@@ -62,7 +62,7 @@ line level    source
   52   1          ESP8266CmdSend(AT_CIPCLOSE,NULL,"OK");
   53   1      }
   54          //----------------------------------------------  
-C51 COMPILER V9.52.0.0   MAIN                                                              06/02/2016 17:59:18 PAGE 2   
+C51 COMPILER V9.52.0.0   MAIN                                                              06/06/2016 20:04:55 PAGE 2   
 
   55          void main (void)  
   56          {  
@@ -71,26 +71,30 @@ line level    source
   59   1          delay_1s(3);
   60   1          ESP8266Init();
   61   1          while(!UartRcvEnd);
-  62   1          EA = 0;
-  63   1          while(1){
-  64   2            
-  65   2              delay_1s(2);
-  66   2              //UartSendData('l');
-  67   2              DHT11_ReadTempAndHumi();
-  68   2              //EA = 0;
-  69   2              SendData();
-  70   2              //ESP8266CmdSend(AT_CWMODE,"=3","OK");
-  71   2              //UartSendData('k');
-  72   2              //UartSendString("AT");
-  73   2              //UartSendData(0x0D);       //发送回车换行
-  74   2              //UartSendData(0x0A);
-  75   2          }
-  76   1      }  
-  77          //----------------------------------------------  
+  62   1          UartRcvEnd = 0;
+  63   1          EA = 0;
+  64   1          while(1){
+  65   2            
+  66   2              delay_1s(2);
+  67   2              //UartSendData('l');
+  68   2              do {
+  69   3                  DHT11_ReadTempAndHumi();
+  70   3              } while(!UartRcvEnd);
+  71   2              UartRcvEnd = 0;
+  72   2              //EA = 0;
+  73   2              SendData();
+  74   2              //ESP8266CmdSend(AT_CWMODE,"=3","OK");
+  75   2              //UartSendData('k');
+  76   2              //UartSendString("AT");
+  77   2              //UartSendData(0x0D);       //发送回车换行
+  78   2              //UartSendData(0x0A);
+  79   2          }
+  80   1      }  
+  81          //----------------------------------------------  
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    295    ----
+   CODE SIZE        =    305    ----
    CONSTANT SIZE    =    108    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

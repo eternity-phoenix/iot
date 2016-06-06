@@ -59,12 +59,16 @@ void main (void)
 		delay_1s(3);
 		ESP8266Init();
 	  while(!UartRcvEnd);
+		UartRcvEnd = 0;
 		EA = 0;
 		while(1){
 			
 				delay_1s(2);
 			  //UartSendData('l');
-				DHT11_ReadTempAndHumi();
+				do {
+						DHT11_ReadTempAndHumi();
+				} while(!UartRcvEnd);
+				UartRcvEnd = 0;
 				//EA = 0;
 				SendData();
 				//ESP8266CmdSend(AT_CWMODE,"=3","OK");
