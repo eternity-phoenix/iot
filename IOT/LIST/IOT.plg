@@ -22,6 +22,6 @@ linking...
     SEGMENT: ?PR?UARTCLAER?UART
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_UARTSENDBUF?UART
-Program Size: data=48.0 xdata=256 code=1352
+Program Size: data=48.0 xdata=256 code=1284
 creating hex file from "IOT"...
 "IOT" - 0 Error(s), 4 Warning(s).

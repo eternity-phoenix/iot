@@ -148,7 +148,7 @@ void ESP8266Init(void)
 		ESP8266CmdSend(AT_CWAUTOCONN,"=1","OK");	//打开模块STA自动连接
 		//ESP8266CmdSend(AT,NULL,"OK");				//测试AT命令
 		ESP8266CmdSend(AT_CWMODE,"=3","OK");		//设置ESP8266工作模式：STA+AP
-		ESP8266CmdSend(AT_CWJAP,ROUTE_USER_PASSWORD,"OK");		//连接无线路由器
+		//ESP8266CmdSend(AT_CWJAP,ROUTE_USER_PASSWORD,"OK");		//连接无线路由器
 
 		//ESP8266CmdSend(AT_CIFSR,0,"OK");			//获取ESP8266 IP地址
 		/*以下if-else部分为更新OLED显示STAIP,没有OLED可以屏蔽

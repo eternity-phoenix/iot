@@ -14,6 +14,26 @@ def get_shows(user, sensor, attribute):
     return render_template("show_datas.html")
 
 
+@app.route('/analyses/roses/<user>/<sensor>/<attribute>/', methods=['GET'])
+def analyses_rose(user, sensor, attribute):
+    return render_template("rose_analyse.html")
+
+
+@app.route('/analyses/pies/<user>/<sensor>/<attribute>/', methods=['GET'])
+def analyses_pie(user, sensor, attribute):
+    return render_template("pie_analyse.html")
+
+
+@app.route('/analyses/datas/<user>/<sensor>/<attribute>/', methods=['GET'])
+def analyses_data(user, sensor, attribute):
+    return render_template("data_analyse.html")
+
+
+@app.route('/analyses/disperses/<user>/<sensor>/<attribute>/', methods=['GET'])
+def analyses_disperse(user, sensor, attribute):
+    return render_template("disperse_analyse.html")
+
+
 @app.route('/show_datas/', methods=['POST'])
 def get_shows_datas():
     try:

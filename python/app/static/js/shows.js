@@ -48,7 +48,7 @@ $(document).ready(function() {
 			}                                                                   
 		},                                                                      
 		title: {                                                                
-			text: 'CPU动态走势图--1秒'                                            
+			text: '温度动态走势图--5秒'
 		},                                                                      
 		xAxis: {                                                                
 			type: 'datetime',                                                   
@@ -56,7 +56,7 @@ $(document).ready(function() {
 		},                                                                      
 		yAxis: {                                                                
 			title: {                                                            
-				text: 'CPU动态走势图--1秒'                                                   
+				text: '温度动态走势图--5秒'
 			},                                                                  
 			plotLines: [{                                                       
 				value: 0,                                                       

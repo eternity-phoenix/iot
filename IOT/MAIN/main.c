@@ -58,24 +58,21 @@ void main (void)
 		//EA = 0;
 		delay_1s(3);
 		ESP8266Init();
-	  while(!UartRcvEnd);
-		UartRcvEnd = 0;
-		EA = 0;
+	  //while(!UartRcvEnd);
+	//UartSendData(UartRcvEnd);
+		//UartRcvEnd = 0;
+		//EA = 0;
 		while(1){
 			
 				delay_1s(2);
+				UartRcvEnd = 0;
 			  //UartSendData('l');
 				do {
 						DHT11_ReadTempAndHumi();
 				} while(!UartRcvEnd);
-				UartRcvEnd = 0;
 				//EA = 0;
 				SendData();
-				//ESP8266CmdSend(AT_CWMODE,"=3","OK");
-				//UartSendData('k');
-				//UartSendString("AT");
-				//UartSendData(0x0D);				//发送回车换行
-				//UartSendData(0x0A);
 		}
+
 }  
 //----------------------------------------------  

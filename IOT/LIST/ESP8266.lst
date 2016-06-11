@@ -1,4 +1,4 @@
-C51 COMPILER V9.52.0.0   ESP8266                                                           06/06/2016 20:04:55 PAGE 1   
+C51 COMPILER V9.52.0.0   ESP8266                                                           06/08/2016 12:05:18 PAGE 1   
 
 
 C51 COMPILER V9.52.0.0, COMPILATION OF MODULE ESP8266
@@ -62,7 +62,7 @@ line level    source
   52   1      
   53   1          i = 90;
   54   1          j = 163;
-C51 COMPILER V9.52.0.0   ESP8266                                                           06/06/2016 20:04:55 PAGE 2   
+C51 COMPILER V9.52.0.0   ESP8266                                                           06/08/2016 12:05:18 PAGE 2   
 
   55   1          do
   56   1          {
@@ -126,7 +126,7 @@ line level    source
  114          ** 函数返回：无
  115          ******************************************************/
  116          void QuitPassThroughMode(void)
-C51 COMPILER V9.52.0.0   ESP8266                                                           06/06/2016 20:04:55 PAGE 3   
+C51 COMPILER V9.52.0.0   ESP8266                                                           06/08/2016 12:05:18 PAGE 3   
 
  117          {
  118   1          UartSendString(QUIT_PASS_THROUGH);      //发送退出透传模式编码
@@ -163,7 +163,7 @@ line level    source
  148   1          ESP8266CmdSend(AT_CWAUTOCONN,"=1","OK");  //打开模块STA自动连接
  149   1          //ESP8266CmdSend(AT,NULL,"OK");       //测试AT命令
  150   1          ESP8266CmdSend(AT_CWMODE,"=3","OK");    //设置ESP8266工作模式：STA+AP
- 151   1          ESP8266CmdSend(AT_CWJAP,ROUTE_USER_PASSWORD,"OK");    //连接无线路由器
+ 151   1          //ESP8266CmdSend(AT_CWJAP,ROUTE_USER_PASSWORD,"OK");    //连接无线路由器
  152   1      
  153   1          //ESP8266CmdSend(AT_CIFSR,0,"OK");      //获取ESP8266 IP地址
  154   1          /*以下if-else部分为更新OLED显示STAIP,没有OLED可以屏蔽
@@ -190,7 +190,7 @@ line level    source
  174   1          //ESP8266CmdSend(AT_CIPMODE,"=1","OK");   //开启透传模式
  175   1          //ESP8266CmdSend(AT_CIPSEND,NULL,NULL);   //开始发送数据
  176   1      }
-C51 COMPILER V9.52.0.0   ESP8266                                                           06/06/2016 20:04:55 PAGE 4   
+C51 COMPILER V9.52.0.0   ESP8266                                                           06/08/2016 12:05:18 PAGE 4   
 
  177          
  178          /*****************************************************
@@ -206,8 +206,8 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    213    ----
-   CONSTANT SIZE    =     74    ----
+   CODE SIZE        =    186    ----
+   CONSTANT SIZE    =     42    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----      11

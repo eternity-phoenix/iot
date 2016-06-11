@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0058)file:///C:/Users/Etern/Downloads/60262901.htm#60262901_001 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	基于WIFI的无线信息采集云系统-整体报告单
+</title>
+    <script src="/static/js/echarts.common.min.js"></script>
+    </head>
+<!-- 引入 vintage 主题 -->
+<body>
+    <div id="main" style="width: 800px;height:400px;"></div>
+    </body>
+<script>
+// 第二个参数可以指定前面引入的主题
+var chart = echarts.init(document.getElementById('main'), 'vintage');
+chart.setOption(option = {
+    title : {
+        text: '温度分布图',
+        subtext: 'CDUT 2016',
+        x:'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        x : 'center',
+        y : 'bottom',
+        data:['10℃以下','10℃~15℃','15℃~20℃','20℃~25℃','25℃~30℃','30℃~35℃','35℃~40℃','40℃以上']
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            magicType : {
+                show: true,
+                type: ['pie', 'funnel']
+            },
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    calculable : true,
+    series : [
+        {
+            name:'半径模式',
+            type:'pie',
+            radius : [20, 110],
+            center : ['25%', 200],
+            roseType : 'radius',
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            lableLine: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {value:1.2, name:'10℃以下'},
+                {value:5.5, name:'10℃~15℃'},
+                {value:8.9, name:'15℃~20℃'},
+                {value:25.2, name:'20℃~25℃'},
+                {value:33.1, name:'25℃~30℃'},
+                {value:20.4, name:'30℃~35℃'},
+                {value:4.7, name:'35℃~40℃'},
+                {value:1, name:'40℃以上'}
+            ]
+        },
+        {
+            name:'面积模式',
+            type:'pie',
+            radius : [30, 110],
+            center : ['75%', 200],
+            roseType : 'area',
+            data:[
+                {value:1.2, name:'10℃以下'},
+                {value:5.5, name:'10℃~15℃'},
+                {value:8.9, name:'15℃~20℃'},
+                {value:25.2, name:'20℃~25℃'},
+                {value:33.1, name:'25℃~30℃'},
+                {value:20.4, name:'30℃~35℃'},
+                {value:4.7, name:'35℃~40℃'},
+                {value:1, name:'40℃以上'}
+            ]
+        }
+    ]
+});
+</script>
+
+    
+    </html>

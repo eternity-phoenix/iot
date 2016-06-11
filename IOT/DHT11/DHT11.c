@@ -1,11 +1,11 @@
-//硬件连接： P2.0口为通讯口连接DHT1
+//硬件连接： P1.0口为通讯口连接DHT1
 #include <reg52.h>
 #include "DHT11.h"
 
 #define uchar unsigned char
 #define uint unsigned int
 
-sbit DHT11_DATA = P0^0;
+sbit DHT11_DATA = P1^0;
 
 uchar FLAG;
 uchar T_data_H, T_data_L, RH_data_H, RH_data_L, checkdata;

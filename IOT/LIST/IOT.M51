@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        06/06/2016  20:04:56  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        06/08/2016  12:05:18  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
@@ -46,27 +46,27 @@ LINK MAP OF MODULE:  IOT (?C_STARTUP)
             CODE    00FDH     008CH     UNIT         ?C_C51STARTUP
             CODE    0189H     0074H     UNIT         ?PR?DHT11_READTEMPANDHUMI?DHT11
             CODE    01FDH     006CH     UNIT         ?CO?MAIN
-            CODE    0269H     006CH     UNIT         ?PR?ESP8266INIT?ESP8266
-            CODE    02D5H     0053H     UNIT         ?PR?UARTINTPRO?UART
-            CODE    0328H     004AH     UNIT         ?CO?ESP8266
-            CODE    0372H     0045H     UNIT         ?C?LIB_CODE
-            CODE    03B7H     003DH     UNIT         ?PR?_ESP8266CMDSEND?ESP8266
-            CODE    03F4H     003CH     UNIT         ?PR?DHT11_READVALUE?DHT11
-            CODE    0430H     002EH     UNIT         ?PR?_DELAY_1S?MAIN
-            CODE    045EH     002CH     UNIT         ?PR?MAIN?MAIN
-            CODE    048AH     0029H     UNIT         ?PR?_UARTSENDBUF?UART
-            CODE    04B3H     001BH     UNIT         ?PR?UARTCLAER?UART
-            CODE    04CEH     0017H     UNIT         ?PR?_DELAY_100US?DHT11
-            CODE    04E5H     0016H     UNIT         ?PR?QUITPASSTHROUGHMODE?ESP8266
-            CODE    04FBH     0016H     UNIT         ?PR?_UARTSENDSTRING?UART
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2016  20:04:56  PAGE 2
+            CODE    0269H     0053H     UNIT         ?PR?UARTINTPRO?UART
+            CODE    02BCH     0051H     UNIT         ?PR?ESP8266INIT?ESP8266
+            CODE    030DH     0045H     UNIT         ?C?LIB_CODE
+            CODE    0352H     003DH     UNIT         ?PR?_ESP8266CMDSEND?ESP8266
+            CODE    038FH     003CH     UNIT         ?PR?DHT11_READVALUE?DHT11
+            CODE    03CBH     002EH     UNIT         ?PR?_DELAY_1S?MAIN
+            CODE    03F9H     002AH     UNIT         ?CO?ESP8266
+            CODE    0423H     0029H     UNIT         ?PR?_UARTSENDBUF?UART
+            CODE    044CH     0023H     UNIT         ?PR?MAIN?MAIN
+            CODE    046FH     001BH     UNIT         ?PR?UARTCLAER?UART
+            CODE    048AH     0017H     UNIT         ?PR?_DELAY_100US?DHT11
+            CODE    04A1H     0016H     UNIT         ?PR?QUITPASSTHROUGHMODE?ESP8266
+            CODE    04B7H     0016H     UNIT         ?PR?_UARTSENDSTRING?UART
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/08/2016  12:05:18  PAGE 2
 
 
-            CODE    0511H     0011H     UNIT         ?C_INITSEG
-            CODE    0522H     000DH     UNIT         ?PR?DELAY1000MS?ESP8266
-            CODE    052FH     000DH     UNIT         ?PR?DELAY_10US?DHT11
-            CODE    053CH     0009H     UNIT         ?PR?DELAY50MS?ESP8266
-            CODE    0545H     0008H     UNIT         ?PR?_UARTSENDDATA?UART
+            CODE    04CDH     0011H     UNIT         ?C_INITSEG
+            CODE    04DEH     000DH     UNIT         ?PR?DELAY1000MS?ESP8266
+            CODE    04EBH     000DH     UNIT         ?PR?DELAY_10US?DHT11
+            CODE    04F8H     0009H     UNIT         ?PR?DELAY50MS?ESP8266
+            CODE    0501H     0008H     UNIT         ?PR?_UARTSENDDATA?UART
 
 
 
@@ -119,7 +119,7 @@ SYMBOL TABLE OF MODULE:  IOT (?C_STARTUP)
 
   VALUE           TYPE          NAME
   ----------------------------------
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2016  20:04:56  PAGE 3
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/08/2016  12:05:18  PAGE 3
 
 
 
@@ -161,12 +161,11 @@ SYMBOL TABLE OF MODULE:  IOT (?C_STARTUP)
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:0090H         PUBLIC        P1
   D:00B0H         PUBLIC        P3
-  B:00A8H.7       PUBLIC        EA
   C:0026H         PUBLIC        SendData
   D:00A8H         PUBLIC        IE
-  C:0430H         PUBLIC        _delay_1s
+  C:03CBH         PUBLIC        _delay_1s
   D:00B8H         PUBLIC        IP
-  C:045EH         PUBLIC        main
+  C:044CH         PUBLIC        main
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
   D:00C8H         PUBLIC        T2CON
@@ -177,19 +176,19 @@ SYMBOL TABLE OF MODULE:  IOT (?C_STARTUP)
   D:0002H         SYMBOL        ms
   D:0004H         SYMBOL        i
   -------         ENDDO         
-  C:0430H         LINE#         11
-  C:0430H         LINE#         13
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2016  20:04:56  PAGE 4
+  C:03CBH         LINE#         11
+  C:03CBH         LINE#         13
+  C:03CBH         LINE#         16
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/08/2016  12:05:18  PAGE 4
 
 
-  C:0430H         LINE#         16
-  C:043BH         LINE#         17
-  C:043FH         LINE#         18
-  C:044AH         LINE#         19
-  C:044AH         LINE#         20
-  C:045DH         LINE#         21
-  C:045DH         LINE#         22
-  C:045DH         LINE#         23
+  C:03D6H         LINE#         17
+  C:03DAH         LINE#         18
+  C:03E5H         LINE#         19
+  C:03E5H         LINE#         20
+  C:03F8H         LINE#         21
+  C:03F8H         LINE#         22
+  C:03F8H         LINE#         23
   -------         ENDPROC       _DELAY_1S
   -------         PROC          SENDDATA
   C:0026H         LINE#         25
@@ -219,43 +218,40 @@ SYMBOL TABLE OF MODULE:  IOT (?C_STARTUP)
   C:00E2H         LINE#         52
   -------         ENDPROC       SENDDATA
   -------         PROC          MAIN
-  C:045EH         LINE#         55
-  C:045EH         LINE#         56
-  C:045EH         LINE#         57
-  C:0461H         LINE#         59
-  C:0468H         LINE#         60
-  C:046BH         LINE#         61
-  C:046FH         LINE#         62
-  C:0472H         LINE#         63
-  C:0474H         LINE#         64
-  C:0474H         LINE#         66
-  C:047BH         LINE#         68
-  C:047BH         LINE#         69
-  C:047EH         LINE#         70
-  C:0482H         LINE#         71
-  C:0485H         LINE#         73
-  C:0488H         LINE#         79
+  C:044CH         LINE#         55
+  C:044CH         LINE#         56
+  C:044CH         LINE#         57
+  C:044FH         LINE#         59
+  C:0456H         LINE#         60
+  C:0459H         LINE#         65
+  C:0459H         LINE#         67
+  C:0460H         LINE#         68
+  C:0463H         LINE#         70
+  C:0463H         LINE#         71
+  C:0466H         LINE#         72
+  C:046AH         LINE#         74
+  C:046DH         LINE#         75
   -------         ENDPROC       MAIN
   -------         ENDMOD        MAIN
 
   -------         MODULE        ESP8266
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2016  20:04:56  PAGE 5
-
-
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:0090H         PUBLIC        P1
   D:00A0H         PUBLIC        P2
   D:00B0H         PUBLIC        P3
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/08/2016  12:05:18  PAGE 5
+
+
   D:00A8H         PUBLIC        IE
-  C:0522H         PUBLIC        Delay1000ms
+  C:04DEH         PUBLIC        Delay1000ms
   D:00B8H         PUBLIC        IP
   B:0098H.0       PUBLIC        RI
-  C:04E5H         PUBLIC        QuitPassThroughMode
+  C:04A1H         PUBLIC        QuitPassThroughMode
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
-  C:053CH         PUBLIC        Delay50ms
-  C:0269H         PUBLIC        ESP8266Init
-  C:03B7H         PUBLIC        _ESP8266CmdSend
+  C:04F8H         PUBLIC        Delay50ms
+  C:02BCH         PUBLIC        ESP8266Init
+  C:0352H         PUBLIC        _ESP8266CmdSend
   D:00C8H         PUBLIC        T2CON
   D:00D0H         PUBLIC        PSW
   -------         PROC          DELAY1000MS
@@ -264,31 +260,31 @@ SYMBOL TABLE OF MODULE:  IOT (?C_STARTUP)
   D:0006H         SYMBOL        j
   D:0005H         SYMBOL        k
   -------         ENDDO         
-  C:0522H         LINE#         26
-  C:0522H         LINE#         27
-  C:0522H         LINE#         31
-  C:0524H         LINE#         32
-  C:0526H         LINE#         33
-  C:0528H         LINE#         35
-  C:0528H         LINE#         37
-  C:0528H         LINE#         38
-  C:052AH         LINE#         39
-  C:052CH         LINE#         40
-  C:052EH         LINE#         41
+  C:04DEH         LINE#         26
+  C:04DEH         LINE#         27
+  C:04DEH         LINE#         31
+  C:04E0H         LINE#         32
+  C:04E2H         LINE#         33
+  C:04E4H         LINE#         35
+  C:04E4H         LINE#         37
+  C:04E4H         LINE#         38
+  C:04E6H         LINE#         39
+  C:04E8H         LINE#         40
+  C:04EAH         LINE#         41
   -------         ENDPROC       DELAY1000MS
   -------         PROC          DELAY50MS
   -------         DO            
   D:0007H         SYMBOL        i
   D:0006H         SYMBOL        j
   -------         ENDDO         
-  C:053CH         LINE#         49
-  C:053CH         LINE#         50
-  C:053CH         LINE#         53
-  C:053EH         LINE#         54
-  C:0540H         LINE#         56
-  C:0540H         LINE#         57
-  C:0542H         LINE#         58
-  C:0544H         LINE#         59
+  C:04F8H         LINE#         49
+  C:04F8H         LINE#         50
+  C:04F8H         LINE#         53
+  C:04FAH         LINE#         54
+  C:04FCH         LINE#         56
+  C:04FCH         LINE#         57
+  C:04FEH         LINE#         58
+  C:0500H         LINE#         59
   -------         ENDPROC       DELAY50MS
   -------         PROC          _ESP8266CMDSEND
   D:0001H         SYMBOL        cmd
@@ -297,45 +293,43 @@ SYMBOL TABLE OF MODULE:  IOT (?C_STARTUP)
   -------         DO            
   D:0025H         SYMBOL        i
   -------         ENDDO         
-  C:03B7H         LINE#         69
-  C:03B7H         LINE#         70
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2016  20:04:56  PAGE 6
+  C:0352H         LINE#         69
+  C:0352H         LINE#         70
+  C:0352H         LINE#         72
+  C:0358H         LINE#         74
+  C:035BH         LINE#         76
+  C:0369H         LINE#         77
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/08/2016  12:05:18  PAGE 6
 
 
-  C:03B7H         LINE#         72
-  C:03BDH         LINE#         74
-  C:03C0H         LINE#         76
-  C:03CEH         LINE#         77
-  C:03CEH         LINE#         78
-  C:03D1H         LINE#         79
-  C:03D1H         LINE#         80
-  C:03D6H         LINE#         81
-  C:03DBH         LINE#         83
-  C:03E1H         LINE#         84
-  C:03F1H         LINE#         85
-  C:03F3H         LINE#         108
+  C:0369H         LINE#         78
+  C:036CH         LINE#         79
+  C:036CH         LINE#         80
+  C:0371H         LINE#         81
+  C:0376H         LINE#         83
+  C:037CH         LINE#         84
+  C:038CH         LINE#         85
+  C:038EH         LINE#         108
   -------         ENDPROC       _ESP8266CMDSEND
   -------         PROC          QUITPASSTHROUGHMODE
-  C:04E5H         LINE#         116
-  C:04E5H         LINE#         117
-  C:04E5H         LINE#         118
-  C:04EEH         LINE#         121
-  C:04F1H         LINE#         122
-  C:04F6H         LINE#         123
+  C:04A1H         LINE#         116
+  C:04A1H         LINE#         117
+  C:04A1H         LINE#         118
+  C:04AAH         LINE#         121
+  C:04ADH         LINE#         122
+  C:04B2H         LINE#         123
   -------         ENDPROC       QUITPASSTHROUGHMODE
   -------         PROC          ESP8266INIT
-  C:0269H         LINE#         132
-  C:0269H         LINE#         133
-  C:0269H         LINE#         146
-  C:0284H         LINE#         148
-  C:029FH         LINE#         150
-  C:02BAH         LINE#         151
+  C:02BCH         LINE#         132
+  C:02BCH         LINE#         133
+  C:02BCH         LINE#         146
+  C:02D7H         LINE#         148
+  C:02F2H         LINE#         150
   -------         ENDPROC       ESP8266INIT
   -------         ENDMOD        ESP8266
 
   -------         MODULE        DHT11
   C:0000H         SYMBOL        _ICE_DUMMY_
-  D:0080H         PUBLIC        P0
   D:0090H         PUBLIC        P1
   D:00B0H         PUBLIC        P3
   D:00A8H         PUBLIC        IE
@@ -343,91 +337,91 @@ SYMBOL TABLE OF MODULE:  IOT (?C_STARTUP)
   D:0011H         PUBLIC        T_data_L_temp
   D:00B8H         PUBLIC        IP
   D:0012H         PUBLIC        FLAG
-  C:052FH         PUBLIC        Delay_10us
+  C:04EBH         PUBLIC        Delay_10us
   D:0013H         PUBLIC        checkdata
-  C:03F4H         PUBLIC        DHT11_ReadValue
+  C:038FH         PUBLIC        DHT11_ReadValue
   D:0014H         PUBLIC        DATA_TEMP
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
   D:0015H         PUBLIC        checkdata_temp
   D:0016H         PUBLIC        RH_data_H
-  B:0080H.0       PUBLIC        DHT11_DATA
+  B:0090H.0       PUBLIC        DHT11_DATA
   D:0017H         PUBLIC        RH_data_L
-  C:04CEH         PUBLIC        _Delay_100us
+  C:048AH         PUBLIC        _Delay_100us
   D:0018H         PUBLIC        RH_data_H_temp
   D:0019H         PUBLIC        RH_data_L_temp
   C:0189H         PUBLIC        DHT11_ReadTempAndHumi
   D:00C8H         PUBLIC        T2CON
   D:001AH         PUBLIC        T_data_H
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2016  20:04:56  PAGE 7
-
-
   D:00D0H         PUBLIC        PSW
   D:001BH         PUBLIC        T_data_L
   -------         PROC          _DELAY_100US
   D:0006H         SYMBOL        j
   -------         DO            
   D:0005H         SYMBOL        i
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/08/2016  12:05:18  PAGE 7
+
+
   -------         ENDDO         
-  C:04CEH         LINE#         16
-  C:04CEH         LINE#         17
-  C:04CEH         LINE#         19
-  C:04D7H         LINE#         20
-  C:04DDH         LINE#         21
-  C:04E4H         LINE#         22
+  C:048AH         LINE#         16
+  C:048AH         LINE#         17
+  C:048AH         LINE#         19
+  C:0493H         LINE#         20
+  C:0499H         LINE#         21
+  C:04A0H         LINE#         22
   -------         ENDPROC       _DELAY_100US
   -------         PROC          DELAY_10US
   -------         DO            
   D:001CH         SYMBOL        i
   -------         ENDDO         
-  C:052FH         LINE#         24
-  C:052FH         LINE#         25
-  C:052FH         LINE#         27
-  C:0531H         LINE#         28
-  C:0533H         LINE#         29
-  C:0535H         LINE#         30
-  C:0537H         LINE#         31
-  C:0539H         LINE#         32
-  C:053BH         LINE#         33
+  C:04EBH         LINE#         24
+  C:04EBH         LINE#         25
+  C:04EBH         LINE#         27
+  C:04EDH         LINE#         28
+  C:04EFH         LINE#         29
+  C:04F1H         LINE#         30
+  C:04F3H         LINE#         31
+  C:04F5H         LINE#         32
+  C:04F7H         LINE#         33
   -------         ENDPROC       DELAY_10US
   -------         PROC          DHT11_READVALUE
   -------         DO            
   D:0006H         SYMBOL        i
   D:0007H         SYMBOL        value
   -------         ENDDO         
-  C:03F4H         LINE#         35
-  C:03F4H         LINE#         36
-  C:03F4H         LINE#         38
-  C:03F6H         LINE#         39
-  C:03F9H         LINE#         40
-  C:0403H         LINE#         41
-  C:0406H         LINE#         42
-  C:0409H         LINE#         43
-  C:040BH         LINE#         44
-  C:040EH         LINE#         45
-  C:040FH         LINE#         46
-  C:040FH         LINE#         47
-  C:0412H         LINE#         48
-  C:041CH         LINE#         50
-  C:0422H         LINE#         51
-  C:0422H         LINE#         52
-  C:0422H         LINE#         55
-  C:0428H         LINE#         56
-  C:042BH         LINE#         57
-  C:042FH         LINE#         58
+  C:038FH         LINE#         35
+  C:038FH         LINE#         36
+  C:038FH         LINE#         38
+  C:0391H         LINE#         39
+  C:0394H         LINE#         40
+  C:039EH         LINE#         41
+  C:03A1H         LINE#         42
+  C:03A4H         LINE#         43
+  C:03A6H         LINE#         44
+  C:03A9H         LINE#         45
+  C:03AAH         LINE#         46
+  C:03AAH         LINE#         47
+  C:03ADH         LINE#         48
+  C:03B7H         LINE#         50
+  C:03BDH         LINE#         51
+  C:03BDH         LINE#         52
+  C:03BDH         LINE#         55
+  C:03C3H         LINE#         56
+  C:03C6H         LINE#         57
+  C:03CAH         LINE#         58
   -------         ENDPROC       DHT11_READVALUE
   -------         PROC          DHT11_READTEMPANDHUMI
   -------         DO            
   D:0007H         SYMBOL        value
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2016  20:04:56  PAGE 8
-
-
   -------         ENDDO         
   C:0189H         LINE#         73
   C:0189H         LINE#         74
   C:0189H         LINE#         78
   C:018BH         LINE#         79
   C:0192H         LINE#         80
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/08/2016  12:05:18  PAGE 8
+
+
   C:0194H         LINE#         83
   C:0197H         LINE#         84
   C:019AH         LINE#         85
@@ -467,30 +461,30 @@ SYMBOL TABLE OF MODULE:  IOT (?C_STARTUP)
 
   -------         MODULE        UART
   C:0000H         SYMBOL        _ICE_DUMMY_
-  C:02D5H         PUBLIC        UartIntPro
+  C:0269H         PUBLIC        UartIntPro
   D:0090H         PUBLIC        P1
   D:00B0H         PUBLIC        P3
   B:00A8H.7       PUBLIC        EA
-  C:04B3H         PUBLIC        UartClaer
+  C:046FH         PUBLIC        UartClaer
   D:00A8H         PUBLIC        IE
   B:00A8H.4       PUBLIC        ES
   D:00B8H         PUBLIC        IP
   B:0098H.0       PUBLIC        RI
   B:0098H.1       PUBLIC        TI
-  C:04FBH         PUBLIC        _UartSendString
-  C:0545H         PUBLIC        _UartSendData
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2016  20:04:56  PAGE 9
-
-
+  C:04B7H         PUBLIC        _UartSendString
+  C:0501H         PUBLIC        _UartSendData
   D:0099H         PUBLIC        SBUF
   D:0087H         PUBLIC        PCON
   D:0098H         PUBLIC        SCON
   D:0089H         PUBLIC        TMOD
   D:0088H         PUBLIC        TCON
   C:0003H         PUBLIC        UartInit
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/08/2016  12:05:18  PAGE 9
+
+
   D:0027H         PUBLIC        UartRcvBufP
   B:00A8H.3       PUBLIC        ET1
-  C:048AH         PUBLIC        _UartSendBuf
+  C:0423H         PUBLIC        _UartSendBuf
   D:008DH         PUBLIC        TH1
   D:008BH         PUBLIC        TL1
   B:0088H.6       PUBLIC        TR1
@@ -517,58 +511,59 @@ SYMBOL TABLE OF MODULE:  IOT (?C_STARTUP)
   C:001DH         LINE#         37
   -------         ENDPROC       UARTINIT
   -------         PROC          UARTINTPRO
-  C:02D5H         LINE#         45
-  C:02E0H         LINE#         47
-  C:02E3H         LINE#         48
-  C:02E3H         LINE#         49
-  C:02E5H         LINE#         51
-  C:02ECH         LINE#         52
-  C:02ECH         LINE#         54
-  C:02ECH         LINE#         57
-  C:02F1H         LINE#         59
-  C:02F9H         LINE#         61
-  C:02F9H         LINE#         63
-  C:02F9H         LINE#         64
-  C:0310H         LINE#         65
-  C:031CH         LINE#         66
-  C:031FH         LINE#         67
-  C:031FH         LINE#         68
-  C:031FH         LINE#         69
+  C:0269H         LINE#         45
+  C:0274H         LINE#         47
+  C:0277H         LINE#         48
+  C:0277H         LINE#         49
+  C:0279H         LINE#         51
+  C:0280H         LINE#         52
+  C:0280H         LINE#         54
+  C:0280H         LINE#         57
+  C:0285H         LINE#         59
+  C:028DH         LINE#         61
+  C:028DH         LINE#         63
+  C:028DH         LINE#         64
+  C:02A4H         LINE#         65
+  C:02B0H         LINE#         66
+  C:02B3H         LINE#         67
+  C:02B3H         LINE#         68
+  C:02B3H         LINE#         69
+  C:02B3H         LINE#         70
   -------         ENDPROC       UARTINTPRO
   -------         PROC          UARTCLAER
-  C:04B3H         LINE#         78
-  C:04B3H         LINE#         79
-  C:04B3H         LINE#         80
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2016  20:04:56  PAGE 10
+  C:046FH         LINE#         79
+  C:046FH         LINE#         80
+  C:046FH         LINE#         81
+  C:047EH         LINE#         82
+  C:0481H         LINE#         83
+  C:0485H         LINE#         84
+  C:0487H         LINE#         85
+  C:0489H         LINE#         86
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/08/2016  12:05:18  PAGE 10
 
 
-  C:04C2H         LINE#         81
-  C:04C5H         LINE#         82
-  C:04C9H         LINE#         83
-  C:04CBH         LINE#         84
-  C:04CDH         LINE#         85
   -------         ENDPROC       UARTCLAER
   -------         PROC          _UARTSENDDATA
   D:0007H         SYMBOL        senddata
-  C:0545H         LINE#         93
-  C:0545H         LINE#         94
-  C:0545H         LINE#         95
-  C:0547H         LINE#         96
-  C:054AH         LINE#         97
-  C:054CH         LINE#         98
+  C:0501H         LINE#         94
+  C:0501H         LINE#         95
+  C:0501H         LINE#         96
+  C:0503H         LINE#         97
+  C:0506H         LINE#         98
+  C:0508H         LINE#         99
   -------         ENDPROC       _UARTSENDDATA
   -------         PROC          _UARTSENDSTRING
   D:0001H         SYMBOL        string
-  C:04FBH         LINE#         106
-  C:04FBH         LINE#         107
-  C:04FBH         LINE#         109
-  C:0500H         LINE#         110
-  C:0500H         LINE#         111
-  C:0502H         LINE#         112
-  C:0505H         LINE#         113
-  C:0507H         LINE#         114
-  C:050EH         LINE#         115
-  C:0510H         LINE#         116
+  C:04B7H         LINE#         107
+  C:04B7H         LINE#         108
+  C:04B7H         LINE#         110
+  C:04BCH         LINE#         111
+  C:04BCH         LINE#         112
+  C:04BEH         LINE#         113
+  C:04C1H         LINE#         114
+  C:04C3H         LINE#         115
+  C:04CAH         LINE#         116
+  C:04CCH         LINE#         117
   -------         ENDPROC       _UARTSENDSTRING
   -------         PROC          _UARTSENDBUF
   D:0001H         SYMBOL        bufp
@@ -576,41 +571,41 @@ SYMBOL TABLE OF MODULE:  IOT (?C_STARTUP)
   -------         DO            
   D:0006H         SYMBOL        i
   -------         ENDDO         
-  C:048AH         LINE#         125
-  C:048EH         LINE#         126
-  C:048EH         LINE#         129
-  C:049AH         LINE#         130
-  C:049AH         LINE#         131
-  C:049FH         LINE#         132
-  C:04A2H         LINE#         133
-  C:04A4H         LINE#         134
-  C:04ABH         LINE#         135
-  C:04B2H         LINE#         136
+  C:0423H         LINE#         126
+  C:0427H         LINE#         127
+  C:0427H         LINE#         130
+  C:0433H         LINE#         131
+  C:0433H         LINE#         132
+  C:0438H         LINE#         133
+  C:043BH         LINE#         134
+  C:043DH         LINE#         135
+  C:0444H         LINE#         136
+  C:044BH         LINE#         137
   -------         ENDPROC       _UARTSENDBUF
   -------         ENDMOD        UART
 
   -------         MODULE        ?C?CLDPTR
-  C:0372H         PUBLIC        ?C?CLDPTR
+  C:030DH         PUBLIC        ?C?CLDPTR
   -------         ENDMOD        ?C?CLDPTR
 
   -------         MODULE        ?C?MEMSET
-  C:038BH         PUBLIC        ?C?MEMSET
+  C:0326H         PUBLIC        ?C?MEMSET
   -------         ENDMOD        ?C?MEMSET
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?DELAY1000MS?ESP8266
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2016  20:04:56  PAGE 11
-
-
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?QUITPASSTHROUGHMODE?ESP8266
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/08/2016  12:05:18  PAGE 11
+
+
     SEGMENT: ?PR?UARTCLAER?UART
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_UARTSENDBUF?UART
 
-Program Size: data=48.0 xdata=256 code=1352
+Program Size: data=48.0 xdata=256 code=1284
 LINK/LOCATE RUN COMPLETE.  4 WARNING(S),  0 ERROR(S)

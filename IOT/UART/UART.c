@@ -62,8 +62,9 @@ void UartIntPro(void)	interrupt 4 using 1
 				//if((UartRcvEnd == 0) && (UartRcvStart == 1))
 				{
 						UartRcvBuf[UartRcvBufP++] = SBUF;	
-					  if(UartRcvBuf[5] == 'G' && UartRcvBuf[6] == 'O')
-							  UartRcvEnd = 1;
+					  if(UartRcvBuf[5] == 'G' && UartRcvBuf[6] == 'O') {
+							UartRcvEnd = 1;
+						}
 				}
 		}
 }
